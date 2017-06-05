@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>移动端</title>
+		<style>
+			*{
+				font-size:30px;
+			}
+			#abc{
+				width: 1000px;
+				height: 1000px;
+				background: red;
+				position: absolute;
+				top: 0;
+				z-index: 1000;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<a href="https://daohang.qq.com/" id="link">你是大傻逼</a>
+		<div id="abc">
+		   666
+		</div>
+		<script type="text/javascript">
+			var abc =document.querySelector("#abc");
+			abc.addEventListener("touchstart",function(){
+				console.log("触发");
+			});
+			abc.addEventListener("touchmove",function(ev){
+				console.log("bbb");
+				this.innerHTML=ev.touches.length;
+			});
+			abc.addEventListener("touchend",function(){
+				this.style.display="none";
+			});
+			abc.addEventListener("touchstart",function(ev){
+				this.style.display="none";
+			});
+		</script>
+	</body>
+</html>
